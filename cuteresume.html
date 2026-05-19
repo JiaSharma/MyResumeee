@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jia Sharma • Aesthetic Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --lavender: #e9d9ff;
+      --pink: #ffdceb;
+      --sky: #dff4ff;
+      --cream: #fffafc;
+      --text: #5f5874;
+      --accent: #8c71b5;
+      --whiteglass: rgba(255,255,255,0.58);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6f1 0%, #efe7ff 45%, #dff5ff 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+    }
+
+    body::before {
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.4);
+      top: -120px;
+      left: -120px;
+    }
+
+    body::after {
+      width: 300px;
+      height: 300px;
+      background: rgba(255,255,255,0.25);
+      bottom: -80px;
+      right: -80px;
+    }
+
+    .resume-container {
+      max-width: 1150px;
+      margin: auto;
+      background: rgba(255,255,255,0.38);
+      border: 1px solid rgba(255,255,255,0.45);
+      backdrop-filter: blur(22px);
+      border-radius: 36px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      box-shadow: 0 25px 60px rgba(120, 95, 160, 0.12);
+      position: relative;
+      z-index: 2;
+    }
+
+    .left-panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.2));
+      padding: 45px 32px;
+      border-right: 1px solid rgba(255,255,255,0.45);
+    }
+
+    .profile-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: auto;
+      background: linear-gradient(135deg, #fff4f8, #ebe2ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #b18bd5;
+      font-weight: 700;
+      box-shadow: 0 12px 25px rgba(140, 100, 180, 0.15);
+      margin-bottom: 28px;
+    }
+
+    .name {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .role {
+      text-align: center;
+      font-size: 0.96rem;
+      color: #7f7698;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section h3 {
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: #8666b2;
+    }
+
+    .contact-item,
+    .skill {
+      background: rgba(255,255,255,0.5);
+      border-radius: 18px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      box-shadow: 0 6px 14px rgba(120, 90, 160, 0.05);
+    }
+
+    .skill {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 10px;
+    }
+
+    .right-panel {
+      padding: 50px;
+    }
+
+    .hero {
+      margin-bottom: 35px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      color: #7f60ad;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+
+    .hero p {
+      line-height: 1.9;
+      font-size: 1rem;
+      max-width: 750px;
+      color: #675f7d;
+    }
+
+    .content-section {
+      margin-top: 38px;
+    }
+
+    .content-section h2 {
+      font-size: 1.3rem;
+      color: #8364b0;
+      margin-bottom: 22px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .content-section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #ffcfe4, #dccfff);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 24px;
+      padding: 24px;
+      transition: 0.3s ease;
+      box-shadow: 0 10px 20px rgba(120, 90, 160, 0.06);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h4 {
+      color: #7f60ad;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .card p,
+    .timeline p {
+      line-height: 1.8;
+      font-size: 0.95rem;
+      color: #6a637d;
+    }
+
+    .timeline {
+      background: rgba(255,255,255,0.5);
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .timeline span {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffd6eb, #e2d5ff);
+      color: #765b9f;
+      font-weight: 500;
+    }
+
+    .footer {
+      margin-top: 45px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.4);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.92rem;
+      color: #7a7291;
+    }
+
+    a {
+      color: #8866b8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 1.2rem;
+      animation: float 4s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    .sparkle.one { top: 40px; right: 120px; }
+    .sparkle.two { bottom: 50px; left: 80px; animation-delay: 1s; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 920px) {
+      .resume-container {
+        grid-template-columns: 1fr;
+      }
+
+      .left-panel {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.45);
+      }
+
+      .right-panel {
+        padding: 35px;
+      }
+
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sparkle one">✦</div>
+  <div class="sparkle two">♡</div>
+
+  <main class="resume-container">
+    <aside class="left-panel">
+      <div class="profile-circle">J</div>
+
+      <h1 class="name">Jia Sharma</h1>
+      <p class="role">Creative Student • Future Business & AI Professional</p>
+
+      <div class="section">
+        <h3>Contact</h3>
+
+        <div class="contact-item">
+          📍 Delhi, India
+        </div>
+
+        <div class="contact-item">
+          ✉️ jsisback123@gmail.com
+        </div>
+
+        <div class="contact-item">
+          🔗 linkedin.com/in/jia-sharma-6b9b71358
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Skills</h3>
+
+        <div class="skill">Creative Thinking</div>
+        <div class="skill">AI & Business Interest</div>
+        <div class="skill">Modern Web Design</div>
+        <div class="skill">Communication</div>
+        <div class="skill">Aesthetic Branding</div>
+        <div class="skill">Digital Creativity</div>
+      </div>
+
+      <div class="section">
+        <h3>Design Style</h3>
+
+        <div class="contact-item">
+          Soft pastel aesthetics, glassmorphism UI, elegant typography, modern feminine branding, and dreamy digital experiences.
+        </div>
+      </div>
+    </aside>
+
+    <section class="right-panel">
+      <div class="hero">
+        <h1>Hello, I'm Jia ✿</h1>
+
+        <p>
+          A creative and ambitious learner passionate about AI, business, digital aesthetics, and modern web experiences. I enjoy combining creativity with technology to create visually beautiful and meaningful projects. Currently exploring futuristic design, startup culture, and innovative digital storytelling.
+        </p>
+      </div>
+
+      <div class="content-section">
+        <h2>About Me</h2>
+
+        <div class="card-grid">
+          <div class="card">
+            <h4>🌷 Creative Vision</h4>
+            <p>
+              Passionate about aesthetic design, branding, and creating digital experiences that feel soft, elegant, and modern.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>💻 Tech & AI</h4>
+            <p>
+              Interested in AI product management, business innovation, and learning how technology shapes the future.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>🎀 Personality</h4>
+            <p>
+              Curious, expressive, detail-oriented, and always excited to learn something new every day.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Experience & Learning</h2>
+
+        <div class="timeline">
+          <span>Current Focus</span>
+          <p>
+            Exploring business trends, AI product management concepts, aesthetic web development, and modern digital branding.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <span>Creative Projects</span>
+          <p>
+            Designing aesthetic HTML pages, experimenting with modern UI styles, and creating visually engaging personal branding concepts.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Interests</h2>
+
+        <div class="card-grid">
+          <div class="card">
+            <h4>☕ Lifestyle</h4>
+            <p>
+              Café aesthetics, pastel themes, Pinterest-inspired visuals, skincare, and luxury minimalism.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>📚 Learning</h4>
+            <p>
+              Business concepts, startups, AI trends, web design, communication, and digital creativity.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>✨ Future Goals</h4>
+            <p>
+              To grow creatively and professionally while building meaningful, aesthetic, and innovative projects.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>Designed in a dreamy pastel aesthetic ✧</span>
+        <span>Jia Sharma • Resume Portfolio</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
