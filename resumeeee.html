@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jia Sharma • Aesthetic Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe9f3 0%, #f2ecff 45%, #dff7ff 100%);
+      color: #5f5675;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 50%;
+      top: -200px;
+      left: -150px;
+      filter: blur(20px);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      bottom: -150px;
+      right: -100px;
+      filter: blur(20px);
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 32px;
+      padding: 35px;
+      box-shadow: 0 12px 30px rgba(150, 125, 170, 0.12);
+    }
+
+    .title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem;
+      color: #7b5fa7;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #6d6486;
+      margin-bottom: 28px;
+    }
+
+    .pill-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffd6eb, #e7dbff);
+      color: #6d5b92;
+      font-size: 0.92rem;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(120, 90, 150, 0.08);
+    }
+
+    .avatar-box {
+      position: relative;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-circle {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fff8fb, #ece6ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: #b28fd5;
+      box-shadow: 0 15px 40px rgba(159, 132, 198, 0.25);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 14px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      font-size: 0.9rem;
+      color: #6c5c8b;
+      box-shadow: 0 8px 20px rgba(120, 90, 150, 0.08);
+    }
+
+    .card1 {
+      top: 40px;
+      left: 10px;
+    }
+
+    .card2 {
+      right: 20px;
+      bottom: 70px;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      color: #7c5ea7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 45px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.45);
+      border-radius: 26px;
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.45);
+      transition: 0.3s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(150, 120, 180, 0.12);
+    }
+
+    .mini-card h3 {
+      margin-bottom: 12px;
+      color: #7a62a0;
+      font-size: 1.2rem;
+    }
+
+    .mini-card p {
+      line-height: 1.7;
+      font-size: 0.95rem;
+      color: #6d6486;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 40px;
+      margin-top: 20px;
+    }
+
+    .contact a {
+      color: #8a67b8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: #887f9f;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 1.2rem;
+      animation: twinkle 2.5s infinite ease-in-out;
+    }
+
+    .sparkle:nth-child(1) {
+      top: 20%;
+      left: 15%;
+    }
+
+    .sparkle:nth-child(2) {
+      top: 65%;
+      right: 10%;
+      animation-delay: 1s;
+    }
+
+    .sparkle:nth-child(3) {
+      top: 82%;
+      left: 20%;
+      animation-delay: 1.8s;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .title {
+        font-size: 3rem;
+      }
+
+      .avatar-box {
+        height: auto;
+        padding: 30px 0;
+      }
+
+      .avatar-circle {
+        width: 260px;
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sparkle">✦</div>
+  <div class="sparkle">♡</div>
+  <div class="sparkle">✧</div>
+
+  <div class="container">
+    <section class="hero">
+      <div class="glass">
+        <p style="letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 10px; color: #9d8ab8;">Aesthetic Digital Profile</p>
+        <h1 class="title">Jia<br>Sharma</h1>
+        <p class="subtitle">
+          Dreamer, creator, aesthetic enthusiast, and someone exploring the worlds of business, AI, creativity, and design. Based in Delhi and always building a soft, beautiful digital universe.
+        </p>
+
+        <div class="pill-container">
+          <div class="pill">AI & Product Management</div>
+          <div class="pill">Creative Design</div>
+          <div class="pill">Business Trends</div>
+          <div class="pill">Modern Web Design</div>
+          <div class="pill">Pastel Aesthetic</div>
+          <div class="pill">Future Founder Energy</div>
+        </div>
+      </div>
+
+      <div class="avatar-box">
+        <div class="floating-card card1">☁︎ loves cute aesthetic designs</div>
+        <div class="avatar-circle">J</div>
+        <div class="floating-card card2">✿ learning & growing every day</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">About Me</h2>
+
+      <div class="grid">
+        <div class="mini-card">
+          <h3>🌸 Personality</h3>
+          <p>
+            Curious, ambitious, creative, and expressive. Someone who enjoys combining aesthetics with meaningful ideas.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>💻 Interests</h3>
+          <p>
+            AI product management, futuristic web design, business innovation, skincare, aesthetics, and storytelling.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>🎀 Style</h3>
+          <p>
+            Soft pastel palettes, dreamy visuals, glassmorphism, minimal luxury, and modern feminine design.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>✨ Goals</h3>
+          <p>
+            Learning new things every day, improving creative skills, building a strong future, and creating beautiful digital experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Current Vibes</h2>
+
+      <div class="glass">
+        <div class="pill-container">
+          <div class="pill">☕ Café dates</div>
+          <div class="pill">📖 Learning new concepts</div>
+          <div class="pill">🎧 Editing audio</div>
+          <div class="pill">💡 Startup culture</div>
+          <div class="pill">🌷 Cute Pinterest aesthetics</div>
+          <div class="pill">🫧 Soft luxury</div>
+          <div class="pill">📱 Modern UI inspiration</div>
+          <div class="pill">🎬 Sitcom energy</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact glass">
+      <h2 class="section-title">Connect With Me</h2>
+
+      <p style="margin-bottom: 14px;">
+        📍 Delhi, India
+      </p>
+
+      <p style="margin-bottom: 14px;">
+        ✉️ <a href="mailto:jsisback123@gmail.com">jsisback123@gmail.com</a>
+      </p>
+
+      <p>
+        🔗 <a href="https://www.linkedin.com/in/jia-sharma-6b9b71358" target="_blank">LinkedIn Profile</a>
+      </p>
+
+      <p class="footer-note">
+        Designed with pastel dreams, floating sparkles, and future-focused energy ✧
+      </p>
+    </section>
+  </div>
+</body>
+</html>
